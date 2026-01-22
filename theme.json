@@ -1,0 +1,269 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.0/theme.json",
+	"settings": {
+		"typography": {
+			"fontFamilies": [
+				{
+					"fontFamily": "HavenMontserrat, sans-serif",
+					"slug": "haven-montserrat",
+					"name": "HavenMontserrat",
+					"fontFace": [
+						{
+							"fontFamily": "HavenMontserrat",
+							"fontWeight": "300",
+							"fontStyle": "normal",
+							"src": [
+								"/wp-content/themes/utopian/assets/fonts/Montserrat-Light.woff",
+								"/wp-content/themes/utopian/assets/fonts/Montserrat-Light.woff2"
+							]
+						},
+						{
+							"fontFamily": "HavenMontserrat",
+							"fontWeight": "300",
+							"fontStyle": "italic",
+							"src": [
+								"/wp-content/themes/utopian/assets/fonts/Montserrat-LightItalic.woff",
+								"/wp-content/themes/utopian/assets/fonts/Montserrat-LightItalic.woff2"
+							]
+						},
+						{
+							"fontFamily": "HavenMontserrat",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"src": [
+								"/wp-content/themes/utopian/assets/fonts/Montserrat-Regular.woff",
+								"/wp-content/themes/utopian/assets/fonts/Montserrat-Regular.woff2"
+							]
+						},
+						{
+							"fontFamily": "HavenMontserrat",
+							"fontWeight": "400",
+							"fontStyle": "italic",
+							"src": [
+								"/wp-content/themes/utopian/assets/fonts/Montserrat-Italic.woff",
+								"/wp-content/themes/utopian/assets/fonts/Montserrat-Italic.woff2"
+							]
+						},
+						{
+							"fontFamily": "HavenMontserrat",
+							"fontWeight": "500",
+							"fontStyle": "normal",
+							"src": [
+								"/wp-content/themes/utopian/assets/fonts/Montserrat-Medium.woff",
+								"/wp-content/themes/utopian/assets/fonts/Montserrat-Medium.woff2"
+							]
+						},
+						{
+							"fontFamily": "HavenMontserrat",
+							"fontWeight": "500",
+							"fontStyle": "italic",
+							"src": [
+								"/wp-content/themes/utopian/assets/fonts/Montserrat-MediumItalic.woff",
+								"/wp-content/themes/utopian/assets/fonts/Montserrat-MediumItalic.woff2"
+							]
+						},
+						{
+							"fontFamily": "HavenMontserrat",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"src": [
+								"/wp-content/themes/utopian/assets/fonts/Montserrat-Bold.woff",
+								"/wp-content/themes/utopian/assets/fonts/Montserrat-Bold.woff2"
+							]
+						},
+						{
+							"fontFamily": "HavenMontserrat",
+							"fontWeight": "700",
+							"fontStyle": "italic",
+							"src": [
+								"/wp-content/themes/utopian/assets/fonts/Montserrat-BoldItalic.woff",
+								"/wp-content/themes/utopian/assets/fonts/Montserrat-BoldItalic.woff2"
+							]
+						},
+						{
+							"fontFamily": "HavenMontserrat",
+							"fontWeight": "900",
+							"fontStyle": "normal",
+							"src": [
+								"/wp-content/themes/utopian/assets/fonts/Montserrat-Black.woff",
+								"/wp-content/themes/utopian/assets/fonts/Montserrat-Black.woff2"
+							]
+						},
+						{
+							"fontFamily": "HavenMontserrat",
+							"fontWeight": "900",
+							"fontStyle": "italic",
+							"src": [
+								"/wp-content/themes/utopian/assets/fonts/Montserrat-BlackItalic.woff",
+								"/wp-content/themes/utopian/assets/fonts/Montserrat-BlackItalic.woff2"
+							]
+						}
+					]
+				},
+				{
+					"fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif",
+					"slug": "system-fonts",
+					"name": "System Fonts"
+				}
+			],
+			"lineHeight": true
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"color": {
+			"link": true,
+			"palette": [
+				{
+					"color": "#ed1849",
+					"name": "Pink Red",
+					"slug": "pink-red"
+				},
+				{
+					"color": "#353333",
+					"name": "Dark Grey",
+					"slug": "dark-grey"
+				},
+				{
+					"color": "#ffffff",
+					"name": "White",
+					"slug": "white"
+				}
+			]
+		},
+		"border": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true
+		},
+		"layout": {
+			"contentSize": "85%",
+			"wideSize": "95.704176334106729%"
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--white)",
+			"text": "var(--wp--preset--color--dark-grey)"
+		},
+		"spacing": {
+			"margin": {
+				"top": "0em",
+				"right": "0em",
+				"bottom": "0em",
+				"left": "0em"
+			},
+			"padding": {
+				"top": "0em",
+				"right": "0em",
+				"bottom": "0em",
+				"left": "0em"
+			}
+		},
+		"elements": {
+			"h1": {
+				"typography": {
+					"fontSize": "4em",
+					"fontWeight": "500"
+				},
+				"spacing": {
+					"margin": {
+						"top": "0em",
+						"right": "0em",
+						"bottom": "1em",
+						"left": "0em"
+					}
+				}
+			},
+			"h2": {
+				"typography": {
+					"fontSize": "3em",
+					"fontWeight": "700"
+				},
+				"spacing": {
+					"margin": {
+						"top": "0em",
+						"right": "0em",
+						"bottom": "1em",
+						"left": "0em"
+					}
+				}
+			},
+			"h3": {
+				"typography": {
+					"fontSize": "2em",
+					"fontWeight": "700"
+				},
+				"spacing": {
+					"margin": {
+						"top": "0em",
+						"right": "0em",
+						"bottom": "1em",
+						"left": "0em"
+					}
+				}
+			},
+			"h4": {
+				"typography": {
+					"fontSize": "1.4em",
+					"fontWeight": "500"
+				},
+				"spacing": {
+					"margin": {
+						"top": "0em",
+						"right": "0em",
+						"bottom": "1em",
+						"left": "0em"
+					}
+				}
+			},
+			"h5": {
+				"typography": {
+					"fontSize": "1.2em",
+					"fontWeight": "500"
+				},
+				"spacing": {
+					"margin": {
+						"top": "0em",
+						"right": "0em",
+						"bottom": "1em",
+						"left": "0em"
+					}
+				}
+			},
+			"h6": {
+				"typography": {
+					"fontSize": "1.1em",
+					"fontWeight": "500"
+				},
+				"spacing": {
+					"margin": {
+						"top": "0em",
+						"right": "0em",
+						"bottom": "1em",
+						"left": "0em"
+					}
+				}
+			}
+		},
+		"typography": {
+			"fontFamilies": [
+				{
+					"fontFamily": "HavenMontserrat, sans-serif",
+					"slug": "haven-montserrat",
+					"name": "HavenMontserrat"
+				},
+				{
+					"fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif",
+					"slug": "system-fonts",
+					"name": "System Fonts"
+				}
+			],
+			"fontFamily": "var(--wp--preset--font-family--haven-montserrat)",
+			"fontSize": "1em"
+		}
+	},
+	"version": 2
+}

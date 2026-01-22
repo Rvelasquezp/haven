@@ -1,0 +1,160 @@
+.coming-soon {
+    max-width: 100% !important;
+    font-size: 0.8em;
+    .coming-soon__grid {
+        display: grid;
+        min-height: 100vh;
+
+        @media screen and (min-width: 960px) {
+            grid-template-columns: 53.4895833% auto;
+        }
+
+        .coming-soon__left {
+            display: grid;
+            justify-items: center;
+            align-items: center;
+
+            @media screen and (max-width: 960px) {
+                position: absolute;
+                z-index: 3;
+                width: 100%;
+                top: 16vh;
+            }
+
+            svg.svg-block {
+                max-width: 18.75em;
+                opacity: 0;
+                transform: scale(0.75);
+
+                @media screen and (min-width: 650px) {
+                    max-width: 31em;
+                }
+
+                @media screen and (max-width: 960px) {
+                    .st0 {
+                        fill: #ffffff;
+                    }
+
+                    .st1 {
+                        fill: #ffffff;
+                    }
+
+                    path {
+                        fill: #ffffff;
+                    }
+                }
+            }
+        }
+
+        .coming-soon__right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .coming-soon__top-text {
+                background-color: #ed1849;
+                color: #fff;
+                display: grid;
+                justify-items: center;
+                align-items: center;
+                padding: 5vh 1em;
+                height: 13vh;
+                z-index: 2;
+                max-width: 100%;
+                margin: 0 auto;
+                width: 100%;
+                transform: translateY(-100%);
+
+                @media screen and (min-width: 650px) {
+                    max-width: 65%;
+                }
+
+                p {
+                    margin: 0;
+                    font-weight: 700;
+                    letter-spacing: 6px;
+                    text-transform: uppercase;
+                    text-align: center;
+                    font-size: 0.8em;
+
+                    @media screen and (min-width: 350px) {
+                        font-size: 1em;
+                    }
+
+                    @media screen and (min-width: 960px) {
+                        font-size: 0.9em;
+                    }
+
+                    @media screen and (min-width: 1024px) {
+                        font-size: 1em;
+                    }
+                }
+            }
+
+            figure {
+                margin: 0;
+                position: absolute;
+                top: 13vh;
+                height: calc(100vh - 5.425em);
+                z-index: 1;
+                width: 100%;
+                background: #ffffff;
+                overflow: hidden;
+
+                @media screen and (min-width: 650px) {
+                    height: 78vh;
+                }
+
+                img {
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                    transform: translateX(100%);
+                }
+            }
+
+            .coming-soon__contact {
+                display: grid;
+                background-color: #ed1849;
+                color: #fff;
+                z-index: 2;
+                padding: 5.3125em 2em 9vh;
+                justify-items: center;
+                max-width: 85%;
+                margin: 0 auto;
+                width: 100%;
+                text-align: center;
+                transform: translateY(100%);
+
+                @media screen and (min-width: 960px) {
+                    max-width: 65%;
+                }
+
+                @media screen and (max-width: 350px) {
+                    p {
+                        font-size: 0.8em;
+                    }
+                }
+
+                p.coming-soon__phone {
+                    letter-spacing: 3px;
+                    text-transform: uppercase;
+                    color: #ffffff;
+                    font-weight: 700;
+                    margin-top: 4vh;
+                    font-size: 1em;
+                    margin-bottom: 0.2em;
+
+                    @media screen and (min-width: 350px) {
+                        font-size: 1.875em;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

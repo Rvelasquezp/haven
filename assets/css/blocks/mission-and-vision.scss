@@ -1,0 +1,65 @@
+section.mission-and-vision {
+    max-width: 100%;
+    margin: 0;
+    display: grid;
+
+    @media screen and (min-width: 960px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    >div {
+        padding: 8.5em 7.35vw;
+
+        @media screen and (min-width: 960px) {
+            padding: 8.5em 7.2em;
+        }
+    }
+
+    .mission-and-vision-left {
+        padding: 8.5em 7.35vw;
+        border-bottom: 1px solid #dcdcdc;
+
+        @media screen and (min-width: 960px) {
+            padding: 8.5em 7.8em 8.5em 7.2em;
+        }
+
+        p {
+            margin: 2.4rem 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                padding-left: 3.5rem;
+                position: relative;
+                margin-bottom: 1rem;
+
+                &:before {
+                    content: "";
+                    background: #ed1849;
+                    width: 2.4em;
+                    height: 1px;
+                    top: 0.6rem;
+                    position: absolute;
+                    left: 0;
+                }
+            }
+        }
+    }
+
+    .mission-and-vision-right {
+        color: #fff;
+
+        p {
+            line-height: 1.5;
+            margin-bottom: 1.8em;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
