@@ -1,20 +1,24 @@
 {
-	"name": "utopian",
-	"version": "1.0.0",
-	"description": "Starter Theme for WordPress",
-	"main": "index.js",
-	"scripts": {
-		"start": "wp-scripts start --webpack-src-dir=assets",
-		"build": "wp-scripts build --webpack-src-dir=assets",
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"keywords": [],
-	"author": "Utopian",
-	"license": "ISC",
-	"dependencies": {
-		"@fortawesome/fontawesome-pro": "^6.1.1",
-		"@wordpress/scripts": "*",
-		"gsap": "npm:@gsap/business@^3.10.4",
-		"swiper": "^8.2.3"
-	}
+  "name": "utopian",
+  "version": "1.0.0",
+  "description": "Starter Theme for WordPress",
+  "main": "index.js",
+  "scripts": {
+    "start": "wp-scripts start --webpack-src-dir=assets",
+    "build": "wp-scripts build --webpack-src-dir=assets",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Utopian",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-pro": "^6.1.1",
+    "@wordpress/scripts": "*",
+    "gsap": "^3.14.2",
+    "swiper": "^8.2.3"
+  },
+  "browserslist": [
+    "defaults",
+    "not ie <= 11"
+  ]
 }
