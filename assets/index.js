@@ -11,6 +11,7 @@ import "/assets/css/blocks/mission-and-vision.scss";
 import "/assets/css/blocks/services-slider.scss";
 import "/assets/css/blocks/our-faq.scss";
 import "/assets/css/blocks/slider_logos.scss";
+import "/assets/css/blocks/banner_small.scss";
 
 // import Swiper styles
 import "swiper/css";
@@ -105,6 +106,9 @@ allNodes.forEach((element) => {
 });
 
 document.querySelectorAll(".fade-in").forEach((box, i) => {
+  // Excluye cualquier fade-in dentro del banner por si acaso
+  if (box.closest(".banner_image_small")) return;
+
   const anim = gsap.fromTo(
     box,
     { autoAlpha: 0, y: 30 },

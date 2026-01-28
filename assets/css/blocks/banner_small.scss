@@ -1,0 +1,105 @@
+.banner_small {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 7.5%;
+  height: 32.7vh;
+
+  @media screen and (max-width: 650px) {
+    height: 21.7vh;
+  }
+  figure {
+    img {
+      display: block;
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+    }
+
+    &.banner_image_small {
+      position: relative;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        mix-blend-mode: multiply;
+        background-color: #282626; /* color del overlay */
+        opacity: 0.4;
+        pointer-events: none; /* Para que no bloquee clics en el banner */
+      }
+    }
+  }
+
+  .title_button {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 86.4%;
+    height: auto;
+
+    left: 6.6%;
+    bottom: 4vh;
+    top: unset;
+    right: unset;
+
+    @media screen and (min-width: 960px) {
+      left: 6.6%;
+      bottom: 4vh;
+      top: unset;
+      right: unset;
+    }
+    @media screen and (max-width: 380px) {
+      width: 94.4%;
+      left: 3.6%;
+    }
+
+    .logo_title {
+      position: relative;
+      display: flex;
+
+      figure.wp-block-image.hero-decor {
+        width: 30.4%;
+        z-index: 3;
+        opacity: 0;
+        visibility: hidden;
+        margin: 0;
+
+        @media screen and (max-width: 960px) {
+          width: 12.4%;
+        }
+        img {
+          display: block;
+          max-width: 100%;
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      p {
+        position: relative;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.66em;
+        line-height: 1.4;
+        font-weight: 600;
+        color: #ffffff;
+        background-color: #ed1849;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        padding-left: 1.8em;
+        padding-right: 1.8em;
+        margin: 0;
+        white-space: nowrap;
+      }
+    }
+  }
+}
