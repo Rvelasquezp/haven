@@ -68,15 +68,13 @@ $template = [
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
     <div class="hero-top-content">
         <InnerBlocks template="<?php echo esc_attr(wp_json_encode($template)); ?>" />
-    </div>
-
-    <div class="hero-background-slider">
-        <?php if(get_field('set_hero_section_as_slider')) { ?>
+        <div class="hero-background-slider">
+            <?php if(get_field('set_hero_section_as_slider')) { ?>
             <?php
             if (have_rows('slides')) {
             ?>
-                <div class="swiper hero-slider">
-                    <div class="swiper-wrapper">
+            <div class="swiper hero-slider">
+                <div class="swiper-wrapper">
                     <?php
                     while (have_rows('slides')) {
                         the_row();
@@ -84,19 +82,19 @@ $template = [
                         $image_url = $image['url'];
                         $image_alt = $image['alt'];
                     ?>
-                        <div class="swiper-slide">
-                            <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
-                        </div>
+                    <div class="swiper-slide">
+                        <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image_alt); ?>">
+                    </div>
                     <?php
                     }
                     ?>
-                    </div>
                 </div>
+            </div>
             <?php
             }
             ?>
-        
-        <?php } else { ?>
+
+            <?php } else { ?>
 
             <div class="hero-video">
                 <?php 
@@ -104,12 +102,20 @@ $template = [
                 ?>
 
                 <video autoplay muted>
-                    <source src="<?php echo get_field('hero_section_video')['url'] ?>" type="<?php echo get_field('hero_section_video')['mime_type'] ?>">
+                    <source src="<?php echo get_field('hero_section_video')['url'] ?>"
+                        type="<?php echo get_field('hero_section_video')['mime_type'] ?>">
                     Your browser does not support the video tag.
                 </video>
 
             </div>
 
-        <?php } ?>
+            <?php } ?>
+        </div>
     </div>
+
+    <figure class="wp-block-image hero-decor">
+        <img decoding="async" src="http://haven.local/wp-content/themes/utopian/assets/images/small_h.png" alt="Hero">
+    </figure>
+
+
 </section>

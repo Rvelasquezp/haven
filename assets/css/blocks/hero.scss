@@ -1,148 +1,176 @@
 section.hero {
-	margin: 0 !important;
-	max-width: 100% !important;
-	position: relative;
-	display: grid;
-	min-height: 65vh;
-	// overflow: hidden;
+  margin: 0 !important;
+  max-width: 100% !important;
+  position: relative;
+  display: grid;
+  min-height: 65vh;
+  // overflow: hidden;
 
-	@media screen and (min-width: 960px) {
-		min-height: 80vh;
-	}
+  @media screen and (min-width: 960px) {
+    min-height: 80vh;
+  }
 
-	@media screen and (max-width: 1200px) and (min-height: 800px) {
-		min-height: 35em;
-	}
+  @media screen and (max-width: 1200px) and (min-height: 800px) {
+    min-height: 35em;
+  }
 
-	.hero-top-content {
-		position: relative;
-		z-index: 2;
-		height: 100%;
+  .hero-top-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    overflow: hidden;
 
-		.hero-content {
-			display: flex;
-			padding: 0 7.35vw 4.5em 7.35vw;
-			margin-left: auto;
-			background: #ed1849d1;
-			color: #fff;
-			height: 100%;
-			flex-direction: column;
-			justify-content: flex-end;
+    .hero-content {
+      position: relative;
+      display: flex;
+      padding: 0 7.35vw 4.5em 7.35vw;
+      margin-left: auto;
+      background: #ed1849d1;
+      color: #fff;
+      height: 100%;
+      flex-direction: column;
+      justify-content: flex-end;
+      z-index: 2;
 
-			@media screen and (min-width: 450px) {
-				padding-right: 20vw;
-			}
+      @media screen and (min-width: 450px) {
+        padding-right: 20vw;
+      }
 
-			@media screen and (min-width: 960px) {
-				padding: 0 3em 4.5em;
-				background: #ed1849;
-				margin-right: 7.65625%;
-				// max-width: 27.6041667%;
-				max-width: 26.4em;
-			}
+      @media screen and (min-width: 960px) {
+        padding: 0 3em 4.5em;
+        background: #ed1849;
+        margin-right: 7.65625%;
+        // max-width: 27.6041667%;
+        max-width: 26.4em;
+      }
 
-			@media screen and (min-width: 2000px) {
-				max-width: 28.5%;
-			}
+      @media screen and (min-width: 2000px) {
+        max-width: 28.5%;
+      }
 
-			.wp-block-buttons {
-				@media screen and (min-width: 2000px) {
-					justify-content: center;
-				}
-			}
+      .wp-block-buttons {
+        @media screen and (min-width: 2000px) {
+          justify-content: center;
+        }
+      }
 
-			h1 {
-				font-size: 2.5em;
-				color: #ffffff;
-				font-weight: 700;
-				text-transform: none;
-				margin-bottom: 4.9rem;
+      h1 {
+        font-size: 2.5em;
+        color: #ffffff;
+        font-weight: 700;
+        text-transform: none;
+        margin-bottom: 4.9rem;
 
-				@media screen and (min-width: 2000px) {
-					font-size: 2.8em;
-				}
+        @media screen and (min-width: 2000px) {
+          font-size: 2.8em;
+        }
 
-				// @media screen and (min-width: 1100px) {
-				//     font-size: 3em;
-				// }
-				// @media screen and (min-width: 1340px) {
-				//     font-size: 3.5em;
-				// }
-				// @media screen and (min-width: 1650px) {
-				//     font-size: 4em;
-				// }
-				// @media screen and (min-width: 1900px) {
-				//     font-size: 2.5em;
-				// }
-			}
+        // @media screen and (min-width: 1100px) {
+        //     font-size: 3em;
+        // }
+        // @media screen and (min-width: 1340px) {
+        //     font-size: 3.5em;
+        // }
+        // @media screen and (min-width: 1650px) {
+        //     font-size: 4em;
+        // }
+        // @media screen and (min-width: 1900px) {
+        //     font-size: 2.5em;
+        // }
+      }
 
-			a.wp-block-button__link {
-				min-width: 100%;
-			}
-		}
+      a.wp-block-button__link {
+        min-width: 100%;
+      }
+    }
 
-		figure.wp-block-image.hero-decor {
-			position: absolute;
-			width: 9em;
-			top: 87%;
-			z-index: 3;
-			right: 0;
+    figure.wp-block-image.hero-decor {
+      display: none;
+      position: absolute;
+      width: 9em;
+      top: 87%;
+      z-index: 3;
+      right: 0;
+      opacity: 0;
+      visibility: hidden;
 
-			@media screen and (min-width: 650px) {
-				right: 1em;
-			}
+      @media screen and (min-width: 650px) {
+        right: 1em;
+      }
 
-			@media screen and (min-width: 960px) {
-				width: 7%;
-				left: 4%;
-				bottom: 10vh;
-				top: unset;
-				right: unset;
-			}
-		}
-	}
+      @media screen and (min-width: 960px) {
+        width: 7%;
+        left: 4%;
+        bottom: 10vh;
+        top: unset;
+        right: unset;
+      }
+    }
+  }
 
-	.hero-background-slider {
-		width: 100%;
-		position: absolute;
-		top: 0;
-		z-index: 1;
-		height: 100%;
+  figure.wp-block-image.hero-decor {
+    position: absolute;
+    width: 9em;
+    top: 87%;
+    z-index: 3;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
 
-		@media screen and (min-width: 960px) {
-			// margin-left: 7.5%;
-			height: 90%;
-		}
+    @media screen and (min-width: 650px) {
+      right: 1em;
+    }
 
-		.swiper-slide {
-			@media screen and (min-width: 960px) {
-				padding-left: 7.5%;
-			}
+    @media screen and (min-width: 960px) {
+      width: 7%;
+      left: 4%;
+      bottom: 10vh;
+      top: unset;
+      right: unset;
+    }
+  }
 
-			img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-			}
-		}
+  .hero-background-slider {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    height: 100%;
 
-		.swiper.hero-slider {
-			height: 100%;
-			pointer-events: none;
-		}
+    @media screen and (min-width: 960px) {
+      // margin-left: 7.5%;
+      height: 90%;
+    }
 
-		.hero-video {
-			@media screen and (min-width: 960px) {
-				padding-left: 7.5%;
-			}
+    .swiper-slide {
+      @media screen and (min-width: 960px) {
+        padding-left: 7.5%;
+      }
 
-			height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
 
-			video {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-			}
-		}
-	}
+    .swiper.hero-slider {
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .hero-video {
+      @media screen and (min-width: 960px) {
+        padding-left: 7.5%;
+      }
+
+      height: 100%;
+
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
 }

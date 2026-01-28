@@ -59,62 +59,68 @@ $the_query = new WP_Query($args);
     if ($the_query->have_posts()) {
 
     ?>
-        <div class="services-slider-container">
-            <div class="services-slider-container-left">
-                <div class="swiper services-swiper-text">
-                    <div class="swiper-nav">
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-                    </div>
-                    <div class="swiper-wrapper">
-                        <?php
+    <div class="services-slider-container">
+        <div class="services-slider-container-left">
+            <div class="swiper services-swiper-text">
+                <div class="swiper-nav">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+                <div class="swiper-wrapper">
+                    <?php
                         while ($the_query->have_posts()) {
                             $the_query->the_post();
                         ?>
-                            <div class="swiper-slide">
-                                <h4><?php echo get_the_title(); ?></h4>
-                                <?php echo get_the_content(); ?>
-                            </div>
-                        <?php
+                    <div class="swiper-slide">
+                        <?php if ( has_excerpt() ) : ?>
+                        <h3 class="excerpt"><?php echo get_the_excerpt(); ?></h3>
+                        <?php endif; ?>
+                        <h4><?php echo get_the_title(); ?></h4>
+                        <!-- Botón al permalink -->
+                        <a class="service-button" href="<?php the_permalink(); ?>">KNOW MORE</a>
+                    </div>
+                    <?php
                         }
                         ?>
-                    </div>
-
                 </div>
+
             </div>
-            <div class="services-slider-container-right">
-                <div class="swiper services-swiper-images">
-                    <div class="swiper-wrapper">
-                        <?php
+        </div>
+        <?php wp_reset_postdata(); // resetea antes del siguiente loop ?>
+        <div class="services-slider-container-right">
+            <div class="swiper services-swiper-images">
+                <div class="swiper-wrapper">
+                    <?php
                         while ($the_query->have_posts()) {
                             $the_query->the_post();
                         ?>
-                            <div class="swiper-slide">
-                                <?php if (!have_rows("images", get_the_ID())) { ?>
-                                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo get_the_title(); ?>">
-                                <?php } else { ?>
-                                    <div class="swiper services-swiper-inner-images">
-                                        <div class="swiper-wrapper">
-                                            <?php while (have_rows("images", get_the_ID())) {
+                    <div class="swiper-slide">
+                        <?php if (!have_rows("images", get_the_ID())) { ?>
+                        <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo get_the_title(); ?>">
+                        <?php } else { ?>
+                        <div class="swiper services-swiper-inner-images">
+                            <div class="swiper-wrapper">
+                                <?php while (have_rows("images", get_the_ID())) {
                                                 the_row();
                                             ?>
-                                                <div class="swiper-slide">
-                                                    <img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['alt']; ?>">
-                                                </div>
-                                            <?php } ?>
-                                        </div>
-                                    </div>
+                                <div class="swiper-slide">
+                                    <img src="<?php echo get_sub_field('image')['url']; ?>"
+                                        alt="<?php echo get_sub_field('image')['alt']; ?>">
+                                </div>
                                 <?php } ?>
                             </div>
-                        <?php
+                        </div>
+                        <?php } ?>
+                    </div>
+                    <?php
                         }
 
                         wp_reset_postdata();
                         ?>
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
     <?php
     }
 

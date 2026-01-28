@@ -144,6 +144,7 @@ class JSXBlock
 }
 new JSXBlock('svg', true);
 new JSXBlock('faq', true);
+new JSXBlock('slider-logo', true);
 
 if (function_exists('register_block_pattern_category')) {
 	register_block_pattern_category(
@@ -258,6 +259,19 @@ function my_acf_blocks_init()
 				'jsx' 			=> true,
 			]
 		));
+
+		acf_register_block_type(array(
+			'title'			=> __('Slider Logo', 'utopian'),
+			'name'			=> 'slider-logo',
+			'render_template'	=> 'assets/blocks/slider-logo/slider-logo.php',
+			'mode'			=> 'preview',
+			'supports'		=> [
+				'align'			=> false,
+				'anchor'		=> false,
+				'customClassName'	=> false,
+				'jsx' 			=> true,
+			]
+		));
 	}
 }
 
@@ -285,19 +299,50 @@ function create_posttype()
 		'service',
 		// CPT Options
 		array(
+			/* Labels */
 			'labels' => array(
-				'name' => __('Services'),
-				'singular_name' => __("Service"),
+				'name'          => __('Services'),
+				'singular_name' => __('Service'),
 			),
-			'public' => false,
-			'show_ui' => true,
-			'supports' => array('title', 'custom-fields', 'thumbnail', 'editor', 'excerpt', 'page-attributes', 'thumbnail'),
-			'taxonomies' => array(''),
+		
+			/* Core settings */
+			'public'              => true,
+			'hierarchical'        => false,
+			'capability_type'     => 'page',
+		
+			/* Visibility */
+			'show_ui'             => true,
+			'show_in_menu'        => true,
+			'show_in_admin_bar'   => true,
+			'show_in_nav_menus'   => true,
+			'publicly_queryable'  => true,
+			'exclude_from_search' => false,
+			'show_in_rest'        => true,
+		
+			/* Content & structure */
+			'supports' => array(
+				'title',
+				'editor',
+				'excerpt',
+				'thumbnail',
+				'custom-fields',
+				'page-attributes',
+			),
+		
+			'taxonomies' => array(), // o elimina esta línea si no usas taxonomías
+		
+			/* URLs */
+			'rewrite'     => array('slug' => 'service'),
 			'has_archive' => false,
-			'rewrite' => array('slug' => 'service'),
-			'show_in_rest' => true,
-			'menu_icon' => 'dashicons-admin-tools',
+		
+			/* Admin UI */
+			'menu_icon'     => 'dashicons-admin-tools',
+			'menu_position' => 6,
+		
+			/* Other */
+			'can_export' => true,
 		)
+		
 	);
 
 	// add_filter('woocommerce_show_page_title', '__return_true', 1);
@@ -305,3 +350,7 @@ function create_posttype()
 }
 // Hooking up our function to theme setup
 add_action('init', 'create_posttype');
+
+// hide admin bar
+add_filter('show_admin_bar', '__return_false');
+// hide admin bar

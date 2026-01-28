@@ -1,0 +1,75 @@
+.partners {
+  position: relative;
+  padding: 5.55rem 7rem 3rem 7rem;
+
+  @media screen and (max-width: 991px) {
+    padding: 50px 0;
+  }
+
+  .slider_logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px; // más flexible
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+
+    // Para layout columnas normal
+    .logo_wrapper {
+      flex: 0 0 auto;
+      figure {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+
+        img {
+          width: 100%;
+          max-width: 340px;
+          max-height: 181px;
+          min-height: 80px; // menos alto para mobile
+          object-fit: contain;
+          object-position: center;
+
+          @media screen and (max-width: 1600px) {
+            max-width: 300px;
+          }
+
+          @media screen and (max-width: 1100px) {
+            max-width: 280px;
+          }
+        }
+      }
+    }
+
+    // Si usas Swiper
+    .swiper {
+      @media screen and (max-width: 640px) {
+        margin-left: -20vw;
+      }
+      .swiper-wrapper {
+        display: flex;
+        align-items: center;
+
+        .swiper-slide {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .logo_wrapper {
+            width: 100%; // para que no se rompa el layout
+          }
+        }
+      }
+    }
+  }
+
+  hr {
+    &.wp-block-separator {
+      border-color: #ed1849;
+      width: 126px !important;
+    }
+  }
+}
