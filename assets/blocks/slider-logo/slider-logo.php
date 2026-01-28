@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Services Slider Block Template.
+ * Logo Slider Block Template.
  *
  * @param   array $block The block settings and attributes.
  * @param   string $content The block inner HTML (empty).

@@ -12,6 +12,7 @@ import "/assets/css/blocks/services-slider.scss";
 import "/assets/css/blocks/our-faq.scss";
 import "/assets/css/blocks/slider_logos.scss";
 import "/assets/css/blocks/banner_small.scss";
+import "/assets/css/blocks/equipe.scss";
 
 // import Swiper styles
 import "swiper/css";

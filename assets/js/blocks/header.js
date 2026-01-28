@@ -68,7 +68,7 @@ export default function Header(scroller) {
     if (!header) return;
 
     // DESKTOP → crear pin
-    if (window.innerWidth >= 650 && !headerPin) {
+    if (window.innerWidth >= 960 && !headerPin) {
       headerPin = ScrollTrigger.create({
         trigger: header,
         pin: true,
@@ -79,7 +79,7 @@ export default function Header(scroller) {
     }
 
     // MOBILE → matar pin
-    if (window.innerWidth < 650 && headerPin) {
+    if (window.innerWidth < 960 && headerPin) {
       headerPin.kill();
       headerPin = null;
     }

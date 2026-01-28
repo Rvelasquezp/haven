@@ -149,3 +149,77 @@ a.wp-block-button__link {
 .d-none {
   display: none !important;
 }
+
+.deuxblocks {
+  position: relative;
+  .columns {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0;
+    gap: 10em;
+    .left {
+      position: relative;
+      padding-top: 5.2em;
+      padding-bottom: 7.2em;
+      .wp-block-buttons {
+        margin-top: 3.1em;
+      }
+    }
+    .right {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      border-left: 2px solid #ed1849;
+    }
+  }
+}
+
+.halfhalf {
+  position: relative;
+  background: linear-gradient(to top, #f0f3f5 80%, #ffffff 20%);
+  .box_inside {
+    position: relative;
+    .columns {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0;
+      padding-top: 5.2em;
+      padding-bottom: 7.2em;
+      padding-left: 4em;
+      padding-right: 4em;
+      gap: 6.8em;
+      .left {
+        position: relative;
+
+        p {
+          margin-bottom: 2em;
+        }
+
+        ul {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          padding-left: 0.9em;
+          padding-right: 8em;
+          gap: 1em;
+          li {
+          }
+        }
+      }
+      .right {
+        position: relative;
+      }
+    }
+  }
+}
+
+.title {
+  h3 {
+    font-size: 2.24em;
+  }
+}

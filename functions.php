@@ -145,6 +145,8 @@ class JSXBlock
 new JSXBlock('svg', true);
 new JSXBlock('faq', true);
 new JSXBlock('slider-logo', true);
+new JSXBlock('block-equipe', true);
+
 
 if (function_exists('register_block_pattern_category')) {
 	register_block_pattern_category(
@@ -272,6 +274,19 @@ function my_acf_blocks_init()
 				'jsx' 			=> true,
 			]
 		));
+
+		acf_register_block_type(array(
+			'title'			=> __('Block equipe', 'utopian'),
+			'name'			=> 'block-equipe',
+			'render_template'	=> 'assets/blocks/block-equipe/block-equipe.php',
+			'mode'			=> 'preview',
+			'supports'		=> [
+				'align'			=> false,
+				'anchor'		=> false,
+				'customClassName'	=> false,
+				'jsx' 			=> true,
+			]
+		));
 	}
 }
 
@@ -344,6 +359,56 @@ function create_posttype()
 		)
 		
 	);
+
+	register_post_type(
+		'equipe',
+		array(
+			/* Labels */
+			'labels' => array(
+				'name'          => __('Équipe'),
+				'singular_name' => __('Membre'),
+			),
+	
+			/* Core settings */
+			'public'          => true,
+			'hierarchical'    => false,
+			'capability_type' => 'post',
+	
+			/* Visibility */
+			'show_ui'            => true,
+			'show_in_menu'      => true,
+			'show_in_admin_bar' => true,
+			'show_in_nav_menus' => false,
+	
+			// 👇 CLAVE: no se puede acceder por URL
+			'publicly_queryable' => false,
+	
+			// 👇 CLAVE: no genera single
+			'has_archive' => false,
+	
+			'show_in_rest' => true,
+	
+			/* Content & structure */
+			'supports' => array(
+				'title',
+				'editor',
+				'thumbnail',
+				'custom-fields',
+				'page-attributes',
+			),
+	
+			/* URLs */
+			// 👇 importante: sin rewrite
+			'rewrite' => false,
+	
+			/* Admin UI */
+			'menu_icon'     => 'dashicons-groups',
+			'menu_position' => 6,
+	
+			'can_export' => true,
+		)
+	);
+	
 
 	// add_filter('woocommerce_show_page_title', '__return_true', 1);
 	// add_filter('woocommerce_single_product_summary', 'woocommerce_template_single_title', 6);
