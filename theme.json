@@ -129,6 +129,11 @@
           "color": "#ffffff",
           "name": "White",
           "slug": "white"
+        },
+        {
+          "color": "#f0f3f5",
+          "name": "Gray",
+          "slug": "gray"
         }
       ]
     },
