@@ -106,6 +106,9 @@ a.wp-block-button__link {
   margin-top: 7em;
   .columns {
     gap: 9em;
+    @media screen and (max-width: 781px) {
+      gap: 6em;
+    }
     .left {
       figure {
         margin: 0 0 0em;
@@ -159,6 +162,9 @@ a.wp-block-button__link {
     justify-content: space-between;
     margin-bottom: 0;
     gap: 10em;
+    @media screen and (max-width: 781px) {
+      gap: 6em;
+    }
     .left {
       position: relative;
       padding-top: 5.2em;
@@ -221,5 +227,68 @@ a.wp-block-button__link {
 .title {
   h3 {
     font-size: 2.24em;
+  }
+}
+
+.deux_blocks {
+  position: relative;
+  display: block;
+  padding-top: 5.2em;
+  padding-bottom: 7.2em;
+  hr.wp-block-separator {
+    position: absolute;
+    bottom: 27%; // altura desde el bottom del contenedor
+    left: 0; // inicia desde el borde izquierdo
+    width: 38% !important; // ancho de la línea
+    border: none; // quitar estilo default
+    border-bottom: 2px solid #ed1849; // línea roja
+    z-index: 10;
+    @media screen and (max-width: 960px) {
+      bottom: 12%;
+    }
+    @media screen and (max-width: 781px) {
+      display: none;
+    }
+  }
+  .columns {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 9em;
+
+    @media screen and (max-width: 781px) {
+      gap: 6em;
+    }
+    .left {
+      hr.wp-block-separator {
+        position: absolute;
+        bottom: -12%; // altura desde el bottom del contenedor
+        left: -7.5vh; // inicia desde el borde izquierdo
+        width: 68% !important; // ancho de la línea
+        border: none; // quitar estilo default
+        border-bottom: 2px solid #ed1849; // línea roja
+        z-index: 10;
+        display: none;
+        @media screen and (max-width: 781px) {
+          display: block;
+        }
+      }
+    }
+    .right {
+      figure {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        img {
+          display: block;
+          max-width: 100%;
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
   }
 }
