@@ -147,7 +147,7 @@ new JSXBlock('faq', true);
 new JSXBlock('slider-logo', true);
 new JSXBlock('block-equipe', true);
 new JSXBlock('block-services', true);
-
+new JSXBlock('list-services', true);
 
 
 if (function_exists('register_block_pattern_category')) {
@@ -294,6 +294,19 @@ function my_acf_blocks_init()
 			'title'			=> __('Block services', 'utopian'),
 			'name'			=> 'block-services',
 			'render_template'	=> 'assets/blocks/block-services/block-services.php',
+			'mode'			=> 'preview',
+			'supports'		=> [
+				'align'			=> false,
+				'anchor'		=> false,
+				'customClassName'	=> false,
+				'jsx' 			=> true,
+			]
+		));
+
+		acf_register_block_type(array(
+			'title'			=> __('List services', 'utopian'),
+			'name'			=> 'list-services',
+			'render_template'	=> 'assets/blocks/list-services/list-services.php',
 			'mode'			=> 'preview',
 			'supports'		=> [
 				'align'			=> false,
