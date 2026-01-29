@@ -102,5 +102,17 @@
         white-space: nowrap;
       }
     }
+
+    .wp-block-buttons {
+      .wp-block-button {
+        a.wp-block-button__link {
+          &:hover {
+            background: #ed1849 !important;
+            color: #ffffff;
+            border-color: #ed1849;
+          }
+        }
+      }
+    }
   }
 }

@@ -615,3 +615,99 @@ a.wp-block-button__link {
   max-width: 1134px;
   width: 100%;
 }
+
+.top_informations {
+  position: relative;
+  padding-top: 5em;
+  padding-bottom: 2em;
+
+  .wp-block-columns {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4em;
+  }
+
+  @media (max-width: 1100px) {
+    .wp-block-columns {
+      flex-wrap: wrap !important;
+    }
+    .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+      flex-basis: 100% !important;
+    }
+  }
+}
+
+.left_line {
+  position: relative;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-right: 7.45vw;
+
+  hr.wp-block-separator {
+    border: none; // quitamos el estilo por defecto
+    height: 2px; // grosor de la línea
+    background-color: #ed1849; // rojo
+    width: 100% !important;
+    margin: 0; // ajusta si necesitas espacio
+  }
+}
+
+.right_line {
+  position: relative;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 7.45vw;
+
+  hr.wp-block-separator {
+    border: none; // quitamos el estilo por defecto
+    height: 2px; // grosor de la línea
+    background-color: #ed1849; // rojo
+    width: 100% !important;
+    margin: 0; // ajusta si necesitas espacio
+  }
+}
+
+.responsibilities {
+  position: relative;
+  padding-top: 5em;
+  padding-bottom: 2em;
+
+  h4 {
+    font-size: 1.66em;
+    font-weight: 600;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  .wp-block-columns {
+    .wp-block-column {
+      ul {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding-left: 0.9em;
+        padding-right: 8em;
+        gap: 1em;
+        li::marker {
+          color: #ed1849;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .wp-block-columns {
+      flex-wrap: wrap !important;
+    }
+    .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+      flex-basis: 100% !important;
+    }
+  }
+}
+
+.open_popupsection {
+  position: relative;
+  padding-top: 4em;
+  padding-bottom: 5em;
+}
