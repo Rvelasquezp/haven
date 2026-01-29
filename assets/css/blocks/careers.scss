@@ -1,0 +1,62 @@
+.careers {
+  position: relative;
+  padding-bottom: 5em;
+  padding-left: 14.58em;
+
+  .career-list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    a {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-decoration: none;
+      width: 100%;
+      border-bottom: 2px solid #ed1849;
+      padding-top: 35px;
+      padding-bottom: 35px;
+      transition: background-color 0.3s ease-in-out;
+      padding-left: 8px;
+      padding-right: 8px;
+      cursor: pointer;
+
+      h3 {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        color: #282626;
+        font-size: 1.66em;
+        font-weight: 600;
+        margin-bottom: 0em;
+        transition: color 0.3s ease-in-out;
+      }
+
+      svg {
+        * {
+          transition: fill 0.3s ease-in-out;
+        }
+      }
+
+      &:first-of-type {
+        border-top: 2px solid #ed1849;
+      }
+
+      &:hover {
+        background-color: #ed1849;
+        h3 {
+          color: #ffffff;
+        }
+
+        svg {
+          * {
+            fill: #ffffff;
+          }
+        }
+      }
+    }
+  }
+}

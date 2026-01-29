@@ -315,6 +315,19 @@ function my_acf_blocks_init()
 				'jsx' 			=> true,
 			]
 		));
+
+		acf_register_block_type(array(
+			'title'			=> __('List careers', 'utopian'),
+			'name'			=> 'list-careers',
+			'render_template'	=> 'assets/blocks/list-careers/list-careers.php',
+			'mode'			=> 'preview',
+			'supports'		=> [
+				'align'			=> false,
+				'anchor'		=> false,
+				'customClassName'	=> false,
+				'jsx' 			=> true,
+			]
+		));
 	}
 }
 
@@ -431,12 +444,61 @@ function create_posttype()
 	
 			/* Admin UI */
 			'menu_icon'     => 'dashicons-groups',
-			'menu_position' => 6,
+			'menu_position' => 7,
 	
 			'can_export' => true,
 		)
 	);
 	
+	register_post_type(
+		'career',
+		// CPT Options
+		array(
+			/* Labels */
+			'labels' => array(
+				'name'          => __('Careers'),
+				'singular_name' => __('Career'),
+			),
+		
+			/* Core settings */
+			'public'              => true,
+			'hierarchical'        => false,
+			'capability_type'     => 'page',
+		
+			/* Visibility */
+			'show_ui'             => true,
+			'show_in_menu'        => true,
+			'show_in_admin_bar'   => true,
+			'show_in_nav_menus'   => true,
+			'publicly_queryable'  => true,
+			'exclude_from_search' => false,
+			'show_in_rest'        => true,
+		
+			/* Content & structure */
+			'supports' => array(
+				'title',
+				'editor',
+				'excerpt',
+				'thumbnail',
+				'custom-fields',
+				'page-attributes',
+			),
+		
+			'taxonomies' => array(), // o elimina esta línea si no usas taxonomías
+		
+			/* URLs */
+			'rewrite'     => array('slug' => 'service'),
+			'has_archive' => false,
+		
+			/* Admin UI */
+			'menu_icon'     => 'dashicons-admin-tools',
+			'menu_position' => 8,
+		
+			/* Other */
+			'can_export' => true,
+		)
+		
+	);
 
 	// add_filter('woocommerce_show_page_title', '__return_true', 1);
 	// add_filter('woocommerce_single_product_summary', 'woocommerce_template_single_title', 6);
