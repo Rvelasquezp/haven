@@ -16,6 +16,7 @@ import "/assets/css/blocks/equipe.scss";
 import "/assets/css/blocks/services.scss";
 import "/assets/css/blocks/listservices.scss";
 import "/assets/css/blocks/careers.scss";
+import "/assets/css/blocks/map.scss";
 
 // import Swiper styles
 import "swiper/css";
@@ -36,6 +37,7 @@ import Hero from "./js/blocks/hero.js";
 import ServicesSlider from "./js/blocks/services-slider.js";
 import FaqToggles from "./js/blocks/faq-toggle.js";
 import sliderLogos from "./js/blocks/slider-logo.js";
+import { renderMaps } from "./js/blocks/maps.js";
 
 // create the scrollSmoother before your scrollTriggers
 let scroller = ScrollSmoother.create({
@@ -66,6 +68,7 @@ Hero(Swiper);
 ServicesSlider(Swiper);
 FaqToggles();
 sliderLogos(Swiper);
+renderMaps();
 
 gsap.to("html", {
   autoAlpha: 1,

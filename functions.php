@@ -168,7 +168,7 @@ function my_acf_blocks_init()
 	}
 
 	// 	Add Google API Key
-	// 	acf_update_setting('google_api_key', 'xxx');
+	acf_update_setting('google_api_key', 'AIzaSyAqlb-_dclBMuv2kyTIqdf9o_1ESReN608');
 
 	// 	Check function exists.
 	if (function_exists('acf_register_block_type')) {
@@ -320,6 +320,19 @@ function my_acf_blocks_init()
 			'title'			=> __('List careers', 'utopian'),
 			'name'			=> 'list-careers',
 			'render_template'	=> 'assets/blocks/list-careers/list-careers.php',
+			'mode'			=> 'preview',
+			'supports'		=> [
+				'align'			=> false,
+				'anchor'		=> false,
+				'customClassName'	=> false,
+				'jsx' 			=> true,
+			]
+		));
+
+		acf_register_block_type(array(
+			'title'			=> __('Map', 'utopian'),
+			'name'			=> 'map',
+			'render_template'	=> 'assets/blocks/map/map.php',
 			'mode'			=> 'preview',
 			'supports'		=> [
 				'align'			=> false,
