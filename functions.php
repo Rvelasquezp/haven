@@ -21,9 +21,10 @@ add_action('after_setup_theme', 'theme_setup');
 
 function utopian_theme_scripts()
 {
-	wp_enqueue_style('style', get_stylesheet_directory_uri() . '/build/index.css');
-	wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/build/style-index.css');
-	wp_enqueue_script('utopian', get_stylesheet_directory_uri() . '/build/index.js', '1.0.0', array(), true);
+	$theme_version = '1.0.2';
+	wp_enqueue_style('style', get_stylesheet_directory_uri() . '/build/index.css', [], $theme_version);
+	wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/build/style-index.css', [], $theme_version);
+	wp_enqueue_script('utopian', get_stylesheet_directory_uri() . '/build/index.js', [], $theme_version, true);
 }
 
 add_action('wp_enqueue_scripts', 'utopian_theme_scripts');
@@ -519,10 +520,6 @@ function create_posttype()
 // Hooking up our function to theme setup
 add_action('init', 'create_posttype');
 
-// hide admin bar
-add_filter('show_admin_bar', '__return_false');
-// hide admin bar
-
 // popup carriere 
 function add_newsletter_popup()
 {
@@ -580,3 +577,7 @@ function add_newsletter_popup()
 }
 add_action('wp_footer', 'add_newsletter_popup');
 // popup carriere
+
+// hide admin bar
+// add_filter('show_admin_bar', '__return_false');
+// hide admin bar
