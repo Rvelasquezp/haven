@@ -114,8 +114,9 @@ $template = [
     </div>
 
     <figure class="wp-block-image hero-decor">
-        <img decoding="async" src="http://haven.local/wp-content/themes/utopian/assets/images/small_h.png" alt="Hero">
+        <img decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/images/small_h.png" alt="Hero">
     </figure>
+
 
 
 </section>
