@@ -54,10 +54,13 @@ header {
           display: flex;
           align-items: center;
           justify-content: flex-end;
+          margin: 0;
+          padding: 0;
+          gap: 0;
 
           a.wp-block-navigation-item__content {
             span.wp-block-navigation-item__label {
-              letter-spacing: 2px;
+              letter-spacing: 0;
               text-transform: uppercase;
               color: #363432;
               font-weight: 700;
@@ -80,7 +83,7 @@ header {
             }
 
             padding-right: 1.75em;
-            padding-left: 1.75em;
+            padding-left: 1.75em !important;
             position: relative;
 
             &:after {
@@ -107,6 +110,10 @@ header {
             &.has-child {
               font-size: 1em;
 
+              a {
+                padding-right: 1.75em !important;
+              }
+
               ul {
                 left: -32%;
                 padding-top: 26px;
@@ -127,6 +134,7 @@ header {
                     padding-right: 1em !important;
                     width: 100%;
                     text-align: center;
+                    padding-right: 1.5em !important;
                     span {
                       color: #ffffff !important;
                       text-transform: capitalize !important;

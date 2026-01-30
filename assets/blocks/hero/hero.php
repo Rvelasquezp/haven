@@ -113,9 +113,11 @@ $template = [
         </div>
     </div>
 
-    <figure class="wp-block-image hero-decor">
-        <img decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/images/small_h.png" alt="Hero">
-    </figure>
+  <figure class="wp-block-image hero-decor">
+    <img decoding="async" 
+         src="<?php echo get_template_directory_uri(); ?>/assets/images/small_h.png" 
+         alt="Hero">
+</figure>
 
 
 

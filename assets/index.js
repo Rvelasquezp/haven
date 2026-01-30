@@ -116,6 +116,7 @@ allNodes.forEach((element) => {
 document.querySelectorAll(".fade-in").forEach((box, i) => {
   // Excluye cualquier fade-in dentro del banner por si acaso
   if (box.closest(".banner_image_small")) return;
+  if (box.closest(".wp-block-button")) return;
 
   const anim = gsap.fromTo(
     box,

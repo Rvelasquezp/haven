@@ -83,8 +83,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100%;
             font-size: 0.8rem;
+            max-width: 381px;
+            width: 100%;
             &::after {
               display: none;
             }
@@ -170,6 +171,8 @@
         margin-top: 3.15rem;
         border-radius: 0;
         font-weight: 600 !important;
+        max-width: 381px;
+        width: 100%;
 
         &:hover {
           background: #282626;

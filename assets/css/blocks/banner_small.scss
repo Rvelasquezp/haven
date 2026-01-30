@@ -104,8 +104,14 @@
     }
 
     .wp-block-buttons {
+      max-width: 381px;
+      width: 100%;
       .wp-block-button {
+        max-width: 381px;
+        width: 100%;
         a.wp-block-button__link {
+          max-width: 381px;
+          width: 100%;
           &:hover {
             background: #ed1849 !important;
             color: #ffffff;
