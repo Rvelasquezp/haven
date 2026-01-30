@@ -17,6 +17,7 @@ import "/assets/css/blocks/services.scss";
 import "/assets/css/blocks/listservices.scss";
 import "/assets/css/blocks/careers.scss";
 import "/assets/css/blocks/map.scss";
+import "/assets/css/blocks/popup_carreire.scss";
 
 // import Swiper styles
 import "swiper/css";
@@ -128,3 +129,159 @@ document.querySelectorAll(".fade-in").forEach((box, i) => {
     once: true,
   });
 });
+
+// contact form 7 stop submitting on select change
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".wpcf7 form");
+  if (!form) return;
+
+  const fields = form.querySelectorAll(
+    'select, input[type="radio"], input[type="checkbox"], input[type="file"]'
+  );
+
+  fields.forEach((field) => {
+    field.addEventListener(
+      "change",
+      function (e) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+      },
+      true // 👈 MUY IMPORTANTE (fase de captura)
+    );
+  });
+});
+// contact form 7 stop submitting on select change
+
+// popup carriere
+document.addEventListener("DOMContentLoaded", function () {
+  // Close button functionality
+  const closeButton = document.querySelector(".popup-close-carriere");
+  if (closeButton) {
+    closeButton.addEventListener("click", function () {
+      const popup = document.getElementById("carriere-popup");
+      if (popup) {
+        // popup.style.display = "none";
+        popup.classList.remove("popup_info_add");
+        document.body.classList.remove("popup-open"); // Remove class when popup is closed
+        // Do not set cookie here setCookie("infolettre_pop", "infolettre_pop", 7);
+      }
+    });
+  }
+
+  document.addEventListener(
+    "wpcf7mailsent",
+    function (event) {
+      const popup = document.getElementById("carriere-popup");
+
+      const form = event.target; // Formulario asociado con el evento
+      const responseOutput = form.querySelector(".wpcf7-response-output");
+      if (!form) {
+        console.error("No se encontró el formulario.");
+        return; // Salir si no se encuentra el formulario
+      }
+
+      if (popup) {
+        console.log("Formulario enviado correctamente.");
+
+        // Ocultar el popup después de 6 segundos
+        setTimeout(function () {
+          // popup.style.display = "none"; // Ocultar el popup
+          popup.classList.remove("popup_info_add");
+          document.body.classList.remove("popup-open"); // Quitar la clase del body
+        }, 2000);
+      }
+
+      // Vaciar el contenido del div de mensajes
+      if (responseOutput) {
+        console.log("Se encontró el div de mensajes. Limpiando...");
+        responseOutput.innerHTML = ""; // Limpia el contenido
+      } else {
+        console.log("No se encontró el div de mensajes.");
+      }
+
+      // Quitar las clases del formulario
+      if (form) {
+        form.classList.remove("sent", "invalid", "failed", "resetting"); // Quitar clases de estado
+      } else {
+        console.log("No se encontró el formulario para quitar las clases.");
+      }
+
+      // setCookie("infolettre_pop", "infolettre_pop", 7); // Establecer cookie
+    },
+    false
+  );
+
+  // Button to reopen popup and reset cookie
+  const reopenButton = document.querySelector(".open_popup_carriere");
+  if (reopenButton) {
+    reopenButton.addEventListener("click", function () {
+      // setCookie("infolettre_pop", "", -1); // Reset cookie
+      const popup = document.getElementById("carriere-popup");
+      const form = document.getElementById("contact-form-1234"); // Asegúrate de que el ID del formulario sea correcto
+      const responseOutput = form
+        ? form.querySelector(".wpcf7-response-output")
+        : null;
+      // Limpiar los mensajes y clases del formulario
+      if (form) {
+        form.classList.remove("sent", "invalid", "failed", "resetting"); // Quitar clases de estado
+        form.reset(); // Resetear el formulario
+        if (responseOutput) {
+          responseOutput.innerHTML = ""; // Limpiar contenido del mensaje de respuesta
+          // responseOutput.style.display = "none";
+        }
+      }
+      if (popup) {
+        // popup.style.display = "flex"; // Show popup
+        popup.classList.add("popup_info_add");
+        document.body.classList.add("popup-open"); // Add class when popup reopens
+      }
+    });
+  }
+});
+// popup carriere
+
+// add file name
+document.addEventListener("DOMContentLoaded", function () {
+  const wrappers = document.querySelectorAll(".file-input-wrapper");
+
+  wrappers.forEach(function (wrapper) {
+    const fileInput = wrapper.querySelector('input[type="file"]');
+    const fileButton = wrapper.querySelector(".custom-file-button");
+    const fileNameWrapper = wrapper.querySelector(".wrapper_file_name");
+    const uploaded = wrapper.querySelector(".custom-file-uploaded");
+
+    // Ocultar al inicio
+    if (fileNameWrapper) {
+      fileNameWrapper.style.display = "none";
+    }
+
+    if (fileInput && fileButton) {
+      // Abrir selector al hacer clic
+      fileButton.addEventListener("click", function () {
+        fileInput.click();
+      });
+
+      // Al seleccionar archivo
+      fileInput.addEventListener("change", function () {
+        if (fileInput.files.length > 0) {
+          const fileName = fileInput.files[0].name;
+
+          if (uploaded) {
+            uploaded.textContent = fileName;
+          }
+
+          if (fileNameWrapper) {
+            fileNameWrapper.style.display = "flex"; // o "block" según tu CSS
+          }
+        } else {
+          // Si se limpia el input
+          if (fileNameWrapper) {
+            fileNameWrapper.style.display = "none";
+          }
+        }
+      });
+    }
+  });
+});
+
+// add file name

@@ -522,3 +522,61 @@ add_action('init', 'create_posttype');
 // hide admin bar
 add_filter('show_admin_bar', '__return_false');
 // hide admin bar
+
+// popup carriere 
+function add_newsletter_popup()
+{
+    $custom_logo_id = get_theme_mod('custom_logo');
+    $logo_url = wp_get_attachment_image_url($custom_logo_id, 'full');
+	if (is_singular('career')) {
+    ?>
+<div id="carriere-popup" class="popup_button_carriere">
+    <div class="banner_nav">
+        <figure>
+            <img src="<?php echo esc_url($logo_url); ?>" alt="">
+        </figure>
+        <span class="popup-close-carriere">
+            <svg xmlns="http://www.w3.org/2000/svg" width="29.901" height="29.901" viewBox="0 0 29.901 29.901">
+                <g id="Composant_183_3" data-name="Composant 183 – 3" transform="translate(0 0)">
+                    <g id="Menu" transform="translate(0 0)">
+                        <path id="Menu-2" data-name="Menu" d="M7.08.05,33.95,26.92l-3.03,3.03L4.049,3.08Z"
+                            transform="translate(-4.049 -0.05)" fill="#fff" />
+                    </g>
+                    <g id="Menu-3" data-name="Menu" transform="translate(0 29.901) rotate(-90)">
+                        <path id="Menu-4" data-name="Menu" d="M7.08.05,33.95,26.92l-3.03,3.03L4.049,3.08Z"
+                            transform="translate(-4.049 -0.05)" fill="#fff" />
+                    </g>
+                </g>
+            </svg>
+        </span>
+    </div>
+
+    <div class="popup-content">
+        <?php
+                // Determine the current language                
+                $tittre_form    = get_field('title_form', 'option');                                
+
+                if ($tittre_form) {
+                ?>
+        <h5><?php echo $tittre_form; ?></h5>
+        <?php } ?>
+
+        <div class="form_info">
+            <?php
+                    
+                    $id_form = get_field('id_form', 'option');                    
+
+                    if ($id_form) {
+                        echo do_shortcode(
+                            '[contact-form-7 id="' . esc_attr($id_form) . '" title="Infolettre" html_id="contact-form-1234" html_class="form info-form"]'
+                        );
+                    }
+                    ?>
+        </div>
+    </div>
+</div>
+<?php
+    }
+}
+add_action('wp_footer', 'add_newsletter_popup');
+// popup carriere

@@ -1,0 +1,345 @@
+.popup_button_carriere {
+  display: flex;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  // overflow-y: scroll;
+  //   background-color: rgba(68, 80, 72, 0.9);
+  //   background-color: rgba(40, 38, 38, 0.9);
+  background-color: #282626;
+
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+
+  // 🔥 Efecto de escala en lugar de translateY
+  transform: scaleX(0.2) scaleY(0.2);
+  opacity: 0;
+  transition: transform 0.6s cubic-bezier(0.5, -0.3, 0.3, 1.5),
+    opacity 0.3s ease-in-out;
+  pointer-events: none;
+
+  &.popup_info_add {
+    // 🔥 El popup se expande desde pequeño
+    transform: scaleX(1) scaleY(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .banner_nav {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 60px;
+    padding-bottom: 9px;
+    // background-color: #445048;
+    @media screen and (max-width: 1100px) {
+      padding: 20.5px 40px;
+    }
+
+    img {
+      max-width: 142px;
+      height: auto;
+      min-height: 82px;
+    }
+
+    .popup-close-carriere {
+      position: relative;
+      cursor: pointer;
+      svg {
+        position: relative;
+        width: 28px;
+        height: 28px;
+        * {
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  .popup-content {
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    overflow: scroll;
+    @media screen and (max-width: 1100px) {
+      padding: 20.5px 40px;
+    }
+
+    .comment-form-rating {
+      text-align: center;
+      color: #f0e7db !important;
+    }
+
+    h5,
+    .comment-reply-title {
+      color: #ffffff !important;
+      margin-bottom: 44px;
+      line-height: 1.5;
+      display: block;
+      text-align: center;
+      font-size: 1.67em;
+      font-weight: 700;
+    }
+
+    .form_info {
+      position: relative;
+      max-width: 1066px;
+      width: 100%;
+    }
+
+    .wpcf7,
+    .woocommerce-Reviews {
+      max-height: 773px;
+      width: 100%;
+
+      @media screen and (max-width: 991px) {
+        padding: 80px 40px;
+      }
+
+      @media screen and (max-width: 768px) {
+        padding: 40px 20px;
+      }
+
+      @media screen and (max-width: 600px) {
+        padding: 40px 0;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+
+        span,
+        p,
+        .comment-form-comment,
+        .form-submit {
+          position: relative; // Add this to ensure the pseudo-element is positioned correctly
+          width: 100%;
+          input,
+          select {
+            line-height: 1.4;
+            font-size: 1em !important;
+            width: 100%;
+            padding: 12px 0px;
+            color: #ffffff;
+            border-radius: 0;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #ffffff;
+            outline: none !important;
+            margin-bottom: 0;
+
+            &::placeholder {
+              font-size: 1em !important;
+              color: #ffffff;
+            }
+
+            &::-ms-input-placeholder {
+              /* Edge 12 -18 */
+
+              font-size: 1em !important;
+              color: #ffffff;
+            }
+
+            &:focus {
+              outline: none !important;
+            }
+          }
+        }
+
+        .submit_form,
+        #submit {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          gap: 20px;
+          max-width: 401px;
+          width: 100%;
+          background-color: transparent;
+          border-radius: 0;
+          cursor: pointer;
+          position: relative;
+          transition: background-color 0.3s ease-in-out;
+
+          @media screen and (max-width: 400px) {
+            padding: 16px 30px;
+          }
+
+          input {
+            line-height: 1.4;
+            border: none;
+            outline: none;
+            width: max-content;
+            background-color: transparent;
+            cursor: pointer;
+            color: #ffffff;
+            width: 100%;
+            height: 100%;
+            font-size: 1em !important;
+            text-align: center;
+            font-weight: 700;
+            transition: color 0.3s ease-in-out,
+              background-color 0.3s ease-in-out;
+            text-transform: uppercase;
+            padding: 16px 60px;
+            border: 1px solid #ffffff;
+
+            &:hover {
+              background-color: #ffffff;
+              color: #282626;
+            }
+          }
+
+          .wpcf7-spinner {
+            display: none;
+          }
+        }
+
+        &.info-form {
+          gap: 40px;
+
+          .submit_form {
+            margin-left: 0;
+          }
+        }
+
+        .file-input-wrapper {
+          position: relative;
+          display: inline-block;
+          width: 100%;
+
+          input[type="file"] {
+            opacity: 0; /* Hide the default file input */
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+          }
+
+          .custom-file-button {
+            display: flex;
+            flex-direction: column; /* Coloca los elementos en una columna */
+            align-items: flex-start; /* Centra los elementos horizontalmente */
+            justify-content: flex-start; /* Centra los elementos verticalmente */
+            border: none; /* Sin borde */
+            cursor: pointer; /* Cambia el cursor cuando se pasa por encima */
+            text-align: center; /* Centra el texto */
+            position: relative; /* Necesario para la posición de elementos internos */
+            color: #0a1b32;
+            font-size: 1em !important;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: 1.6px;
+            background: none;
+            width: 100%;
+
+            .custom-file-icon {
+              display: flex;
+              align-items: center; /* Alinea el ícono verticalmente */
+              justify-content: space-between;
+              width: 100%;
+              gap: 20px;
+              border-radius: 0;
+              padding: 12px 0px;
+              margin-bottom: 6px;
+              font-size: 1em !important;
+              font-weight: 400;
+              line-height: 1.1;
+
+              color: #ffffff;
+              border-radius: 0;
+              background: transparent;
+              border: none;
+              border-bottom: 1px solid #ffffff;
+
+              svg {
+                width: 18px;
+                height: 18px;
+                margin-right: 16px;
+              }
+            }
+
+            .wrapper_file_name {
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              width: 60%;
+              padding: 10px 6px;
+              text-align: left;
+
+              svg {
+                position: relative;
+                display: flex;
+                width: 49px;
+                height: 49px;
+              }
+
+              .custom-file-uploaded {
+                color: #f0e7db;
+                font-size: 0.8em;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 110%; /* 17.6px */
+                letter-spacing: 1.28px;
+                padding-left: 22px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .wpcf7 form .wpcf7-response-output {
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .wpcf7 form.sent .wpcf7-response-output {
+      border: none;
+      color: #f0e7db;
+      font-size: clamp(16px, 3vw, 18px);
+    }
+
+    .wpcf7 form.invalid .wpcf7-response-output {
+      border: none;
+      color: #505156;
+      font-size: clamp(16px, 3vw, 18px);
+    }
+
+    .wpcf7 form.failed .wpcf7-response-output {
+      border: none;
+      color: #505156;
+      font-size: clamp(16px, 3vw, 18px);
+    }
+
+    .wpcf7-not-valid-tip {
+      // color: #505156;
+      font-size: clamp(16px, 3vw, 18px);
+      text-align: center;
+      margin-top: 8px;
+    }
+  }
+}
+
+body.popup-open {
+  overflow: hidden;
+  height: 100vh; /* Evita que el contenido se desplace detrás del popup */
+}
