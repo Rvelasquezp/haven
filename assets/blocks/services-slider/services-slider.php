@@ -43,7 +43,6 @@ $args = array(
 if (get_field('custom_services')) {
     $args['post__in'] = get_field('custom_services');
 }
-
 $the_query = new WP_Query($args);
 
 ?>
@@ -62,6 +61,11 @@ $the_query = new WP_Query($args);
     <div class="services-slider-container">
         <div class="services-slider-container-left">
             <div class="swiper services-swiper-text">
+                <?php
+                    $title = get_field('title_slider');
+                    if ( ! empty($title) ) : ?>
+                <h3><?php echo esc_html($title); ?></h3>
+                <?php endif; ?>
                 <div class="swiper-nav">
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
@@ -72,11 +76,7 @@ $the_query = new WP_Query($args);
                             $the_query->the_post();
                         ?>
                     <div class="swiper-slide">
-                        <?php if ( has_excerpt() ) : ?>
-                        <h3 class="excerpt"><?php echo get_the_excerpt(); ?></h3>
-                        <?php endif; ?>
                         <h4><?php echo get_the_title(); ?></h4>
-                        <!-- Botón al permalink -->
                         <a class="service-button" href="<?php the_permalink(); ?>">KNOW MORE</a>
                     </div>
                     <?php

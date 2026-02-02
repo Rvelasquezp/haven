@@ -39,7 +39,7 @@ section.services-slider {
     }
 
     @media screen and (max-width: 959px) {
-      min-height: 72.81vh;
+      min-height: auto;
     }
 
     @media screen and (min-width: 2000px) {
@@ -55,7 +55,15 @@ section.services-slider {
       }
 
       .services-swiper-text {
+        position: relative;
+        display: flex;
+        flex-direction: column;
         height: 100%;
+      }
+
+      .swiper-wrapper {
+        height: auto;
+        margin-top: auto;
       }
 
       p {
@@ -73,19 +81,19 @@ section.services-slider {
         margin-bottom: 0;
 
         @media screen and (min-width: 650px) {
-          font-size: 2em;
+          font-size: 2.3em;
           padding-bottom: 1.6rem;
         }
-        &:after {
-          content: "";
-          width: 100%;
-          background: #fff;
-          opacity: 0.3;
-          height: 1px;
-          left: 0;
-          bottom: 0;
-          position: absolute;
-        }
+        // &:after {
+        //   content: "";
+        //   width: 100%;
+        //   background: #fff;
+        //   opacity: 0.3;
+        //   height: 1px;
+        //   left: 0;
+        //   bottom: 0;
+        //   position: absolute;
+        // }
       }
 
       h4 {
@@ -99,7 +107,7 @@ section.services-slider {
 
         @media screen and (min-width: 650px) {
           font-size: 1.7em;
-          padding-bottom: 1.6rem;
+          padding: 0rem;
           margin-bottom: 2rem;
           padding-top: 1.6rem;
         }
@@ -111,6 +119,7 @@ section.services-slider {
 
       a {
         position: relative;
+        display: block;
         background: transparent;
         text-decoration: none;
         color: #ffffff;
@@ -122,9 +131,12 @@ section.services-slider {
         line-height: 1.3;
         text-transform: uppercase;
         transition: all 0.3s ease-in-out;
+        text-align: center;
 
         @media screen and (min-width: 960px) {
-          min-width: 22.5em;
+          min-width: 18em;
+          width: 100%;
+          max-width: max-content;
         }
 
         &:hover {
@@ -143,6 +155,10 @@ section.services-slider {
       }
 
       .swiper-slide {
+        @media screen and (max-width: 960px) {
+          display: flex;
+          flex-direction: column;
+        }
         &:after {
           content: "";
           position: absolute;
@@ -243,7 +259,7 @@ section.services-slider {
       font-family: "Font Awesome 6 Pro";
       display: block;
       color: #fff;
-      font-size: 2rem;
+      font-size: 1.6rem;
       cursor: pointer;
     }
   }
