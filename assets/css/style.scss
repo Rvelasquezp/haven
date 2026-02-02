@@ -203,6 +203,39 @@ a.wp-block-button__link {
     }
   }
 }
+.deuxblocksv3 {
+  position: relative;
+  padding-left: 7vw;
+  @media screen and (max-width: 960px) {
+    padding-right: 7vw;
+  }
+  .columns {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0;
+    gap: 10em;
+    @media screen and (max-width: 781px) {
+      gap: 6em;
+    }
+    .left {
+      position: relative;
+      padding-top: 5.2em;
+      padding-bottom: 7.2em;
+      .wp-block-buttons {
+        margin-top: 3.1em;
+      }
+    }
+    .right {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-left: 2px solid #ed1849;
+    }
+  }
+}
 
 .halfhalf {
   position: relative;
@@ -318,7 +351,7 @@ a.wp-block-button__link {
     position: absolute;
     bottom: 27%; // altura desde el bottom del contenedor
     left: 0; // inicia desde el borde izquierdo
-    width: 38% !important; // ancho de la línea
+    width: 37% !important; // ancho de la línea
     border: none; // quitar estilo default
     border-bottom: 2px solid #ed1849; // línea roja
     z-index: 10;

@@ -21,7 +21,7 @@ add_action('after_setup_theme', 'theme_setup');
 
 function utopian_theme_scripts()
 {
-	$theme_version = '1.0.4';
+	$theme_version = '1.0.5';
 	wp_enqueue_style('style', get_stylesheet_directory_uri() . '/build/index.css', [], $theme_version);
 	wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/build/style-index.css', [], $theme_version);
 	wp_enqueue_script('utopian', get_stylesheet_directory_uri() . '/build/index.js', [], $theme_version, true);
