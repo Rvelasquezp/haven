@@ -3,7 +3,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-left: 7.5%;
+  padding-left: 6.8%;
   height: 32.7vh;
 
   @media screen and (max-width: 650px) {
@@ -46,13 +46,13 @@
     width: 86.4%;
     height: auto;
 
-    left: 6.6%;
+    left: 5.9%;
     bottom: 4vh;
     top: unset;
     right: unset;
 
     @media screen and (min-width: 960px) {
-      left: 6.6%;
+      left: 5.9%;
       bottom: 4vh;
       top: unset;
       right: unset;
@@ -105,12 +105,16 @@
 
     .wp-block-buttons {
       max-width: 381px;
+      display: flex;
       width: 100%;
+      justify-content: flex-end;
       .wp-block-button {
         max-width: 381px;
+        display: flex;
         width: 100%;
+        justify-content: flex-end;
         a.wp-block-button__link {
-          max-width: 381px;
+          max-width: 26.84em;
           width: 100%;
           &:hover {
             background: #ed1849 !important;
