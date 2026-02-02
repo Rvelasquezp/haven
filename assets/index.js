@@ -132,25 +132,42 @@ document.querySelectorAll(".fade-in").forEach((box, i) => {
 });
 
 // contact form 7 stop submitting on select change
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".wpcf7 form");
   if (!form) return;
 
-  const fields = form.querySelectorAll(
+  let preventAutoSubmit = false;
+
+  const watchedFields = form.querySelectorAll(
     'select, input[type="radio"], input[type="checkbox"], input[type="file"]'
   );
 
-  fields.forEach((field) => {
-    field.addEventListener(
-      "change",
-      function (e) {
+  // 1️⃣ Detectamos cambios en campos "peligrosos"
+  watchedFields.forEach((field) => {
+    field.addEventListener("change", () => {
+      preventAutoSubmit = true;
+
+      // liberamos el bloqueo en el próximo tick
+      setTimeout(() => {
+        preventAutoSubmit = false;
+      }, 0);
+    });
+  });
+
+  // 2️⃣ Interceptamos submit ANTES que CF7
+  form.addEventListener(
+    "submit",
+    (e) => {
+      if (preventAutoSubmit) {
         e.preventDefault();
         e.stopImmediatePropagation();
-      },
-      true // 👈 MUY IMPORTANTE (fase de captura)
-    );
-  });
+        return false;
+      }
+    },
+    true // 👈 captura (clave)
+  );
 });
+
 // contact form 7 stop submitting on select change
 
 // popup carriere
@@ -286,3 +303,157 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // add file name
+
+// header submenu
+// limpieza de atributos data-wp-*, y estilos inline
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.innerWidth <= 991) {
+    // 1. Eliminar botón toggle de WP
+    document
+      .querySelectorAll(".wp-block-navigation-submenu__toggle")
+      .forEach((btn) => btn.remove());
+
+    // 2. Limpiar elementos que tienen submenús
+    document
+      .querySelectorAll(".wp-block-navigation-item.has-child")
+      .forEach((el) => {
+        // ✅ Eliminar todos los data-wp-* y tabindex
+        [...el.attributes].forEach((attr) => {
+          if (attr.name.startsWith("data-wp-") || attr.name === "tabindex") {
+            el.removeAttribute(attr.name);
+          }
+        });
+
+        // ✅ Clases conflictivas
+        el.classList.remove(
+          "open-on-hover",
+          "open-on-hover-click",
+          "open-on-click",
+          "current-menu-ancestor"
+        );
+
+        // ✅ Submenú
+        const submenu = el.querySelector(
+          ".wp-block-navigation__submenu-container"
+        );
+
+        if (submenu) {
+          // Limpiar atributos conflictivos
+          [...submenu.attributes].forEach((attr) => {
+            if (
+              attr.name.startsWith("data-wp-") ||
+              attr.name === "style" ||
+              attr.name === "aria-hidden"
+            ) {
+              submenu.removeAttribute(attr.name);
+            }
+          });
+
+          // Clases conflictivas
+          submenu.classList.remove(
+            "wp-block-navigation-submenu",
+            "is-menu-open"
+          );
+
+          // ✅ Limpiar cada item del submenú
+          submenu.querySelectorAll("li").forEach((li) => {
+            li.removeAttribute("style");
+
+            // También limpiamos data-wp-* de los <li> internos por si acaso
+            [...li.attributes].forEach((attr) => {
+              if (attr.name.startsWith("data-wp-")) {
+                li.removeAttribute(attr.name);
+              }
+            });
+          });
+        }
+      });
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const itemContents = document.querySelectorAll(
+    ".mobile-nav .wp-block-navigation-item__content"
+  );
+
+  let activeTimeline = null;
+  let activeParent = null;
+
+  itemContents.forEach((content) => {
+    const liElement = content.closest("li");
+    const submenu = liElement.querySelector(
+      ".mobile-nav .wp-block-navigation__submenu-container"
+    );
+
+    if (submenu) {
+      const submenuItems = submenu.querySelectorAll("li");
+      submenu.classList.add("menu_submenu");
+
+      // GSAP timeline
+      const tl = gsap.timeline({ paused: true, reversed: true });
+
+      tl.fromTo(
+        submenu,
+        { height: 0, opacity: 0 },
+        {
+          height: "auto",
+          opacity: 1,
+          duration: 0.4,
+          ease: "power2.out",
+        }
+      );
+
+      tl.from(
+        submenuItems,
+        {
+          opacity: 0,
+          x: -10,
+          duration: 0.4,
+          stagger: 0.1,
+          ease: "power2.out",
+        },
+        "-=0.3"
+      );
+
+      // Clic sobre el elemento con submenu
+      content.addEventListener("click", function (event) {
+        event.preventDefault(); // detener navegación
+        event.stopPropagation(); // detener burbuja
+
+        if (tl.reversed()) {
+          tl.play();
+          liElement.classList.add("submenu-open");
+          // content.setAttribute("aria-expanded", "true"); // <-- Aquí
+          activeTimeline = tl;
+          activeParent = liElement;
+        } else {
+          tl.reverse();
+          liElement.classList.remove("submenu-open");
+          // content.setAttribute("aria-expanded", "false"); // <-- Aquí
+          activeTimeline = null;
+          activeParent = null;
+        }
+      });
+
+      // Evita que clic dentro del submenú cierre el menú
+      submenu.addEventListener("click", function (event) {
+        event.stopPropagation();
+      });
+    }
+  });
+
+  // Cierre al hacer clic fuera
+  document.addEventListener("click", function (event) {
+    if (
+      activeTimeline &&
+      !event.target.closest(".wp-block-navigation-item.has-child")
+    ) {
+      activeTimeline.reverse();
+      activeParent?.classList.remove("submenu-open");
+      activeTimeline = null;
+      activeParent = null;
+    }
+  });
+});
+
+// header submenu

@@ -579,5 +579,5 @@ add_action('wp_footer', 'add_newsletter_popup');
 // popup carriere
 
 // hide admin bar
-// add_filter('show_admin_bar', '__return_false');
+add_filter('show_admin_bar', '__return_false');
 // hide admin bar
