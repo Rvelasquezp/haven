@@ -249,3 +249,37 @@
     }
   }
 }
+
+.footer_botton {
+  position: relative;
+  max-width: 381px;
+  width: 100%;
+  .wp-block-button {
+    position: relative;
+    max-width: 381px;
+    width: 100%;
+    .wp-block-button__link {
+      position: relative;
+      max-width: 381px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.8rem;
+      background-color: #ffffff !important;
+      color: #282626 !important;
+      border-color: #ffffff;
+      padding: 27px 32px !important;
+      transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+        border 0.3s ease-in-out;
+      font-weight: 700;
+      line-height: 1.2;
+
+      &:hover {
+        background-color: #282626 !important;
+        border-color: #282626;
+        color: #ffffff !important;
+      }
+    }
+  }
+}

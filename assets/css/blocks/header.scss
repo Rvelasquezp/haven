@@ -117,15 +117,15 @@ header {
               }
 
               ul {
-                left: -32%;
+                left: -10vh;
                 padding-top: 26px;
                 padding-bottom: 16px;
                 background-color: transparent;
                 border: none;
                 gap: 0;
                 min-width: 286px !important;
-                @media screen and (max-width: 1540px) {
-                  left: -45%;
+                @media screen and (max-width: 1240px) {
+                  left: -12vh;
                 }
 
                 li {

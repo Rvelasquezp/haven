@@ -50,7 +50,7 @@ section.services-slider {
       padding: 4.3em 6vw;
 
       @media screen and (min-width: 960px) {
-        padding: 3em 5.85rem;
+        padding: 4em 5.85rem;
         padding-right: 3.85rem;
       }
 
@@ -63,14 +63,14 @@ section.services-slider {
 
       .swiper-wrapper {
         height: auto;
-        margin-top: auto;
+        .swiper-slide {
+          @media screen and (max-width: 960px) {
+            height: auto;
+          }
+        }
       }
 
       p {
-        // display: -webkit-box;
-        // -webkit-line-clamp: 3;
-        // -webkit-box-orient: vertical;
-        // overflow: hidden;
         line-height: 1.5;
       }
 
@@ -83,6 +83,7 @@ section.services-slider {
         @media screen and (min-width: 650px) {
           font-size: 2.3em;
           padding-bottom: 1.6rem;
+          margin-bottom: auto;
         }
         // &:after {
         //   content: "";
@@ -150,7 +151,7 @@ section.services-slider {
         margin-bottom: 2.2rem;
 
         @media screen and (min-width: 650px) {
-          margin-bottom: 2.7rem;
+          margin-bottom: 0rem;
         }
       }
 
