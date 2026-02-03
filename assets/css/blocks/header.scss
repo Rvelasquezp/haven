@@ -117,13 +117,16 @@ header {
               }
 
               ul {
-                left: -10vh;
+                left: -7vh;
                 padding-top: 26px;
                 padding-bottom: 16px;
                 background-color: transparent;
                 border: none;
                 gap: 0;
                 min-width: 286px !important;
+                @media screen and (max-width: 1600px) {
+                  left: -10vh;
+                }
                 @media screen and (max-width: 1240px) {
                   left: -12vh;
                 }
