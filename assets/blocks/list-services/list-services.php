@@ -38,14 +38,14 @@ if ($query->have_posts()) : ?>
     $icon_white = get_field('icon_red', get_the_id());
     ?>
 
-    <a href="<?php echo esc_url( get_permalink() ); ?>" class="service-card">
+    <div class="service-card">
         <div class="equipe-icon">
             <?php if ($icon_white) : ?>
             <img src="<?php echo esc_url( $icon_white['url'] ); ?>" alt="<?php echo esc_attr( $icon_white['alt'] ); ?>">
             <?php endif; ?>
         </div>
         <h3 class="equipe-name"><?php the_title(); ?></h3>
-    </a>
+    </div>
 
     <?php endwhile; ?>
 

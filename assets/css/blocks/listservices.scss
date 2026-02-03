@@ -28,7 +28,7 @@
       grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
     }
 
-    a.service-card {
+    div.service-card {
       position: relative;
       display: flex;
       flex-direction: column;
@@ -49,13 +49,14 @@
       }
       h3 {
         text-align: center;
-        font-size: 1.68em;
+        font-size: 1.48em;
         margin: 0;
         margin-top: 1em;
         text-align: center;
         max-width: 325px;
         width: 100%;
         color: #282626;
+        font-weight: 500;
       }
     }
   }

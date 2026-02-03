@@ -30,7 +30,7 @@
         margin: 0;
         color: #282626;
         font-size: 1.66em;
-        font-weight: 600;
+        font-weight: 500;
         margin-bottom: 0em;
         transition: color 0.3s ease-in-out;
       }
@@ -45,18 +45,18 @@
         border-top: 2px solid #ed1849;
       }
 
-      // &:hover {
-      //   background-color: #ed1849;
-      //   h3 {
-      //     color: #ffffff;
-      //   }
+      &:hover {
+        // background-color: #ed1849;
+        h3 {
+          color: #ed1849;
+        }
 
-      //   svg {
-      //     * {
-      //       fill: #ffffff;
-      //     }
-      //   }
-      // }
+        svg {
+          * {
+            fill: #ed1849;
+          }
+        }
+      }
     }
   }
 }

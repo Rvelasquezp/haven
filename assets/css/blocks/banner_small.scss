@@ -3,8 +3,12 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-left: 6.8%;
+  padding-left: 6em;
   height: 32.7vh;
+
+  @media screen and (max-width: 1600px) {
+    padding-left: 6.7em;
+  }
 
   @media screen and (max-width: 650px) {
     height: 21.7vh;
@@ -43,23 +47,27 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 87.4%;
+    width: 89%;
     height: auto;
 
-    left: 5.9%;
+    left: 5em;
     bottom: 4vh;
     top: unset;
     right: unset;
 
-    @media screen and (min-width: 960px) {
-      left: 5.9%;
+    @media screen and (max-width: 1600px) {
+      width: 90%;
+      left: 5.2em;
+    }
+    @media screen and (max-width: 960px) {
+      left: 6em;
       bottom: 4vh;
       top: unset;
       right: unset;
     }
+
     @media screen and (max-width: 380px) {
       width: 94.4%;
-      left: 3.6%;
     }
 
     .logo_title {
@@ -108,13 +116,16 @@
       display: flex;
       width: 100%;
       justify-content: flex-end;
+      @media screen and (max-width: 960px) {
+        display: none;
+      }
       .wp-block-button {
         max-width: 381px;
         display: flex;
         width: 100%;
         justify-content: flex-end;
         a.wp-block-button__link {
-          max-width: 26.84em;
+          max-width: 100%;
           width: 100%;
           &:hover {
             background: #ed1849 !important;

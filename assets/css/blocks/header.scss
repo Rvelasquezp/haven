@@ -17,7 +17,11 @@ header {
   border-top: 10px solid #ed1849;
 
   @media screen and (min-width: 960px) {
-    padding: 2.5em 7.3em;
+    padding: 2.5em 6em;
+  }
+
+  @media screen and (max-width: 1600px) {
+    padding: 2.5em 6.5em;
   }
 
   .header-line {

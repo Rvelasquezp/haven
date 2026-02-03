@@ -144,7 +144,7 @@
       "width": true
     },
     "layout": {
-      "contentSize": "86%",
+      "contentSize": "89%",
       "wideSize": "95.704176334106729%"
     }
   },
@@ -199,7 +199,7 @@
       "h3": {
         "typography": {
           "fontSize": "2.26em",
-          "fontWeight": "700"
+          "fontWeight": "600"
         },
         "spacing": {
           "margin": {
@@ -212,8 +212,8 @@
       },
       "h4": {
         "typography": {
-          "fontSize": "1.4em",
-          "fontWeight": "500"
+          "fontSize": "1.66em",
+          "fontWeight": "600"
         },
         "spacing": {
           "margin": {
