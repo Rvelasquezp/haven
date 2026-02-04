@@ -47,7 +47,7 @@ export default function Hero(Swiper) {
         topText,
         {
           duration: 1,
-          yPercent: -110,
+          yPercent: -140,
         },
         "-=1"
       );

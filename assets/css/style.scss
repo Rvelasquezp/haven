@@ -40,56 +40,6 @@ p {
   font-weight: 400;
 }
 
-a.wp-block-button__link {
-  background: transparent;
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 15px;
-  padding: 28px 3.2em;
-  border: 1px solid;
-  border-radius: 0;
-  line-height: 1.3;
-  text-transform: uppercase;
-  transition: all 0.3s ease-in-out;
-
-  @media screen and (min-width: 960px) {
-    min-width: 22.5em;
-  }
-
-  &:hover {
-    background: #fff !important;
-    color: #282626;
-    border-color: #ed1849;
-  }
-}
-
-.wp-block-buttons {
-  &.black {
-    a.wp-block-button__link {
-      background: transparent;
-      color: #ffffff;
-      font-weight: 700;
-      font-size: 0.8em;
-      padding: 1.4625em 3.2em;
-      border: 2px solid #282626;
-      border-radius: 0;
-      line-height: 1.3;
-      text-transform: uppercase;
-      transition: all 0.3s ease-in-out;
-
-      @media screen and (min-width: 960px) {
-        min-width: 22.5em;
-      }
-
-      &:hover {
-        color: #ffffff !important;
-        border-color: #282626;
-        background: #282626 !important;
-      }
-    }
-  }
-}
-
 @media screen and (max-width: 960px) {
   .desktop-only {
     display: none !important;
@@ -301,33 +251,6 @@ a.wp-block-button__link {
       border-top: 1px solid rgba(255, 255, 255, 0.3);
       padding-top: 3.2em;
       padding-bottom: 1.95em;
-      .wp-block-buttons {
-        position: relative;
-        max-width: 381px;
-        width: 100%;
-        .wp-block-button {
-          position: relative;
-          width: 100%;
-        }
-      }
-      a.wp-block-button__link {
-        background: #ffffff !important;
-        color: #282626;
-        font-weight: 700;
-        font-size: 0.8em;
-        padding: 1.4625em 3.2em;
-        border: 1px solid #ffffff;
-        border-radius: 0;
-        line-height: 1.3;
-        text-transform: uppercase;
-        transition: all 0.3s ease-in-out;
-
-        &:hover {
-          background: #282626 !important;
-          color: #ffffff;
-          border-color: #282626;
-        }
-      }
     }
   }
   @media (max-width: 1100px) {
@@ -491,24 +414,6 @@ a.wp-block-button__link {
       border-top: 1px solid rgba(255, 255, 255, 0.3);
       padding-top: 3.2em;
       padding-bottom: 1.95em;
-      a.wp-block-button__link {
-        background: #ffffff !important;
-        color: #282626;
-        font-weight: 700;
-        font-size: 0.8em;
-        padding: 1.4625em 3.2em;
-        border: 1px solid #ffffff;
-        border-radius: 0;
-        line-height: 1.3;
-        text-transform: uppercase;
-        transition: all 0.3s ease-in-out;
-
-        &:hover {
-          background: #282626 !important;
-          color: #ffffff;
-          border-color: #282626;
-        }
-      }
     }
   }
   @media (max-width: 1100px) {
@@ -817,4 +722,156 @@ a.wp-block-button__link {
   position: relative;
   padding-top: 4em;
   padding-bottom: 5em;
+}
+
+.white {
+  max-width: 301px;
+  width: 100%;
+  &.wp-block-buttons {
+    .wp-block-button {
+      max-width: 301px;
+      width: 100%;
+      a.wp-block-button__link {
+        max-width: 301px;
+        width: 100%;
+        background: #ffffff;
+        color: #282626;
+        font-weight: 600;
+        font-size: 16px;
+        padding: 19px 2em;
+        border: 2px solid #ffffff;
+        border-radius: 0;
+        line-height: 1.3;
+        text-transform: uppercase;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: #ffffff !important;
+          border-color: #282626;
+          background: #282626 !important;
+        }
+      }
+    }
+  }
+}
+
+.black {
+  max-width: 301px;
+  width: 100%;
+  &.wp-block-buttons {
+    .wp-block-button {
+      max-width: 301px;
+      width: 100%;
+      a.wp-block-button__link {
+        max-width: 301px;
+        width: 100%;
+        background: transparent;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 16px;
+        padding: 19px 2em;
+        border: 2px solid #282626;
+        border-radius: 0;
+        line-height: 1.3;
+        text-transform: uppercase;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: #ffffff !important;
+          border-color: #282626;
+          background: #282626 !important;
+        }
+      }
+    }
+  }
+}
+
+.redbg {
+  position: relative;
+  max-width: 301px;
+  width: 100%;
+  .wp-block-button {
+    position: relative;
+    max-width: 301px;
+    width: 100%;
+    .wp-block-button__link {
+      position: relative;
+      max-width: 301px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      background-color: #ffffff !important;
+      color: #282626 !important;
+      border-color: #ffffff;
+      padding: 22px 2em !important;
+      transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+        border 0.3s ease-in-out;
+      font-weight: 600;
+      line-height: 1.2;
+      border-radius: 0;
+      text-transform: uppercase;
+
+      &:hover {
+        background-color: #282626 !important;
+        border-color: #282626;
+        color: #ffffff !important;
+      }
+    }
+  }
+
+  &.full {
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+
+    @media screen and (max-width: 960px) {
+      max-width: 301px;
+    }
+    .wp-block-button {
+      position: relative;
+      max-width: 100%;
+      width: 100%;
+
+      .wp-block-button__link {
+        position: relative;
+        max-width: 100%;
+        width: 100%;
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.borderwhite {
+  max-width: 301px;
+  width: 100%;
+  &.wp-block-buttons {
+    .wp-block-button {
+      max-width: 301px;
+      width: 100%;
+      a.wp-block-button__link {
+        max-width: 301px;
+        width: 100%;
+        background: transparent;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 16px;
+        padding: 24px 2em;
+        border: 1px solid #ffffff;
+        border-radius: 0;
+        line-height: 1.3;
+        text-transform: uppercase;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: #ffffff !important;
+          border-color: #ed1849;
+          background: #ed1849 !important;
+        }
+      }
+    }
+  }
 }
