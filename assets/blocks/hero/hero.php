@@ -101,7 +101,7 @@ $template = [
                 // var_dump(get_field('hero_section_video')); 
                 ?>
 
-                <video autoplay muted>
+                <video autoplay muted loop>
                     <source src="<?php echo get_field('hero_section_video')['url'] ?>"
                         type="<?php echo get_field('hero_section_video')['mime_type'] ?>">
                     Your browser does not support the video tag.
@@ -113,11 +113,9 @@ $template = [
         </div>
     </div>
 
-  <figure class="wp-block-image hero-decor">
-    <img decoding="async" 
-         src="<?php echo get_template_directory_uri(); ?>/assets/images/small_h.png" 
-         alt="Hero">
-</figure>
+    <figure class="wp-block-image hero-decor">
+        <img decoding="async" src="<?php echo get_template_directory_uri(); ?>/assets/images/small_h.png" alt="Hero">
+    </figure>
 
 
 
