@@ -34,7 +34,7 @@ section.services-slider {
   .services-slider-container {
     background: #ed1849;
     color: #fff;
-    min-height: 69.81vh;
+    min-height: 80.4074vh;
 
     @media screen and (min-width: 960px) {
       display: grid;
@@ -206,7 +206,7 @@ section.services-slider {
 
       @media screen and (min-width: 960px) {
         height: calc(100% - 2.3em);
-        padding: 3.15em;
+        padding: 1.15em;
         min-height: unset;
       }
 
@@ -216,7 +216,7 @@ section.services-slider {
         width: 100%;
 
         @media screen and (min-width: 960px) {
-          width: calc(100% + 7.125rem);
+          width: calc(100% + 10.125rem);
         }
 
         @media screen and (max-width: 959px) {
@@ -226,7 +226,7 @@ section.services-slider {
         .swiper-slide {
           img {
             max-width: 58.13vw;
-            max-height: 59.4074vh;
+            max-height: 80.4074vh;
             width: 100%;
             height: 100%;
             object-fit: cover;

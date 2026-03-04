@@ -396,7 +396,7 @@ document.addEventListener("DOMContentLoaded", function () {
         submenu,
         { height: 0, opacity: 0 },
         {
-          height: "auto",
+          height: submenu.scrollHeight,
           opacity: 1,
           duration: 0.4,
           ease: "power2.out",
@@ -416,7 +416,7 @@ document.addEventListener("DOMContentLoaded", function () {
       );
 
       // Clic sobre el elemento con submenu
-      content.addEventListener("click", function (event) {
+      content.addEventListener("pointerup", function (event) {
         event.preventDefault(); // detener navegación
         event.stopPropagation(); // detener burbuja
 

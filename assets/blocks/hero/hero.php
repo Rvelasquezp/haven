@@ -101,7 +101,7 @@ $template = [
                 // var_dump(get_field('hero_section_video')); 
                 ?>
 
-                <video autoplay muted loop>
+                <video autoplay="" loop="" muted="" playsinline="" webkit-playsinline="">
                     <source src="<?php echo get_field('hero_section_video')['url'] ?>"
                         type="<?php echo get_field('hero_section_video')['mime_type'] ?>">
                     Your browser does not support the video tag.
